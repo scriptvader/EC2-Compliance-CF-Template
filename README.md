@@ -20,6 +20,15 @@ As with most AWS services you will incur costs for usage. For this CloudFormatio
   * <a href="https://aws.amazon.com/lambda/pricing/">Lambda pricing</a>
   * <a href="https://aws.amazon.com/config/pricing/">Config pricing</a>
 
+## Template Output
+
+In the CloudFormation Console you should be able to verify the following resources have been created in the case of each template:
+* A Lambda Function
+* A Config Rule
+* A Config Permission to call Lambda
+* An IAM role
+
+
 
 
 
