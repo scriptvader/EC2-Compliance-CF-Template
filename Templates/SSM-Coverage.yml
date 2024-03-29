@@ -205,19 +205,19 @@ Resources:
       Action: 'lambda:InvokeFunction'
       Principal: config.amazonaws.com
       SourceAccount: !Ref 'AWS::AccountId'
-  Outputs:
-    ConfigRuleArn:
-      Description: The ARN of the Config Rule
-      Value: !GetAtt
-      - ConfigRule
-      - Arn
-    LambdaFunctionArn:
-      Description: The ARN of the Lambda function
-      Value: !GetAtt
-      - LambdaFunction
-      - Arn
-    IamRoleArn:
-      Description: The ARN of the IAM Role
-      Value: !GetAtt
-      - IamRole
-      - Arn
+Outputs:
+  ConfigRuleArn:
+    Description: The ARN of the Config Rule
+    Value: !GetAtt
+    - ConfigRule
+    - Arn
+  LambdaFunctionArn:
+    Description: The ARN of the Lambda function
+    Value: !GetAtt
+    - LambdaFunction
+    - Arn
+  IamRoleArn:
+    Description: The ARN of the IAM Role
+    Value: !GetAtt
+    - IamRole
+    - Arn
