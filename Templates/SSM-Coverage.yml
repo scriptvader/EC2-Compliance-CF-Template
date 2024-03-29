@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: Verify SSM coverage on EC2 instances in your account
 Parameters:
-  DeploymentName:
+  StackName:
     Type: String
     Description: This name would apply to resources in this template.
 Resources:
@@ -10,7 +10,7 @@ Resources:
     Properties:
       RoleName: !Join
       - ''
-      - - !Ref DeploymentName
+      - - !Ref StackName
         - '-role-'
         - !Ref 'AWS::Region'
       AssumeRolePolicyDocument:
@@ -25,7 +25,7 @@ Resources:
       Policies:
         PolicyName: !Join
         - ''
-        - - !Ref DeploymentName
+        - - !Ref StackName
           - '-policy-'
           - !Ref 'AWS::Region'
         PolicyDocument:
@@ -64,7 +64,7 @@ Resources:
               - ':'
               - !Ref 'AWS::AccountId'
               - ':log-group:/aws/lambda/'
-              - !Ref DeploymentName
+              - !Ref StackName
               - '-function-'
               - !Ref 'AWS::Region'
               - ':*'
@@ -165,7 +165,7 @@ Resources:
                   return 'Invoked for a notification other than Scheduled Notification... Ignoring.'
       FunctionName: !Join
       - ''
-      - - !Ref DeploymentName
+      - - !Ref StackName
         - '-function-'
         - !Ref 'AWS::Region'
       Description: >-
@@ -181,7 +181,7 @@ Resources:
     Properties:
       ConfigRuleName: !Join
       - ''
-      - - !Ref DeploymentName
+      - - !Ref StackName
         - '-config-rule-'
         - !Ref 'AWS::Region'
       Description: >-
